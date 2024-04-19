@@ -650,25 +650,25 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_dir",
         type=str,
-        default="/coc/flash9/myang415/detection_dataset_depth",
+        default="robot_kidnapper_dataset",
         help="Path to the dataset",
     )
     parser.add_argument(
         "--empty_data_dir",
         type=str,
-        default="/coc/flash9/myang415/empty_aug_wav",
+        default="robot_kidnapper_empty_dataset",
         help="Path to the empty augmentation dataset",
     )
     parser.add_argument(
         "--exp_name",
         type=str,
-        default="human detection",
+        default="train_default",
         help="Name of the experiment. Used for wandb logging purposes.",
     )
     parser.add_argument(
         "--proj_name",
         type=str,
-        default="human_detection_0123",
+        default="unkidnappable_robot",
         help="Name of the project. Used for wandb logging purposes.",
     )
     parser.add_argument(
@@ -742,6 +742,7 @@ if __name__ == "__main__":
     parser.add_argument("--num_epochs", type=int, default=75)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--batch_size", type=int, default=40)
+    parser.add_argument("--test_batch_size", type=int, default=16)
     parser.add_argument(
         "--pos_weight",
         type=float,
@@ -937,7 +938,7 @@ if __name__ == "__main__":
 
     test_loader = DataLoader(
         test_dataset,
-        batch_size=args.batch_size,
+        batch_size=args.test_batch_size,
         shuffle=False,
         num_workers=5,
         drop_last=True,
@@ -946,7 +947,7 @@ if __name__ == "__main__":
     # This code logs the experiment with wandb offline and uses wandb_osh to asynchronously sync the logs to wandb
     if args.log:
         proj_name = args.proj_name
-        wandb.init(config=args, project=proj_name, group=args.exp_name, mode="offline")
+        wandb.init(config=args, project=proj_name, group=args.exp_name, mode="online")
         logger = wandb.run
         logger.config.update(args)
     else:
