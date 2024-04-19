@@ -1,3 +1,21 @@
+# The Un-Kidnappable Robot: Acoustic Localization of Sneaking People
+
+[[arXiv](https://arxiv.org/abs/2310.03743)] [[Website](https://sites.google.com/view/unkidnappable-robot)]
+
+## The Robot Kidnapper Dataset
+
+We collect ...
+
+## Installation instructions
+
+To run training, first create a new conda environment: \
+`conda env create --name {you-env-name} python=3.9`
+
+Then, download the requirements: \
+`pip install -r requirements.txt`
+
+
+
 To run test experiment: 
 
 1. Request an interactive gpu with `salloc --gres=gpu:1 --cpus-per-task=7 -p overcap -J "inter" --exclude=bmo,hal,t1000 --qos debug`
