@@ -1,5 +1,8 @@
  # The Un-Kidnappable Robot: Acoustic Localization of Sneaking People
 
+**Mengyu Yang, Patrick Grady, Samarth Brahmbhatt, Arun Balajee Vasudevan, Charles C. Kemp, James Hays** \
+*Georgia Institute of Technology, Intel Labs, Carnegie Mellon University, Hello Robot Inc.*
+
 [[arXiv](https://arxiv.org/abs/2310.03743)] [[Website](https://sites.google.com/view/unkidnappable-robot)]
 
 ## The Robot Kidnapper Dataset
