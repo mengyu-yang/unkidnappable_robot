@@ -11,12 +11,12 @@ Please download and extract both zip files. `robot_kidnapper_dataset.zip` contai
 ## Installation instructions
 
 To run training, first create a new conda environment: \
-`conda env create --name {you-env-name} python=3.9`
+`conda env create --name unkidnap_robot python=3.9`
 
 Then, download the requirements: \
 `pip install -r requirements.txt`
 
-To train a model on the Robot Kidnapper dataset with default hyperparameters, first edit the dataset directory paths in `run_train.sh`. Under the `--data_dir` argument, add the path to the directory extracted from `robot_kidnapper_dataset.zip`. Under the `--empty_data_dir` argument, add the path to the directory extracted from `robot_kidnapper_empty_dataset.zip`. 
+To train a model on the Robot Kidnapper dataset with default hyperparameters, first edit the dataset directory paths in `run_train.sh`. Under the `--data_dir` argument, add the path to the directory extracted from `robot_kidnapper_dataset.zip`. Under the `--empty_data_dir` argument, add the path to the directory extracted from `robot_kidnapper_empty_dataset.zip`. You can also change the test room used in the leave-one-out cross validation.
 
-Then run `run_train.sh` by either copying the contents into the terminal or running the file directly.
+Then simply run `run_train.sh` to start training.
 
