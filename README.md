@@ -1,10 +1,12 @@
-# The Un-Kidnappable Robot: Acoustic Localization of Sneaking People
+ # The Un-Kidnappable Robot: Acoustic Localization of Sneaking People
 
 [[arXiv](https://arxiv.org/abs/2310.03743)] [[Website](https://sites.google.com/view/unkidnappable-robot)]
 
 ## The Robot Kidnapper Dataset
 
-We collect ...
+We collect the Robot Kidnapper Dataset, consisting of 4-channel audio paired with 360 degree RGB video frames. You can download the dataset here: [link]()
+
+Please download and extract both zip files. `robot_kidnapper_dataset.zip` contains a folder with the training and test examples and `robot_kidnapper_empty_dataset.zip` contains a folder with the empty room recordings used for data augmentation and background subtraction.
 
 ## Installation instructions
 
@@ -14,12 +16,7 @@ To run training, first create a new conda environment: \
 Then, download the requirements: \
 `pip install -r requirements.txt`
 
+To train a model on the Robot Kidnapper dataset with default hyperparameters, first edit the dataset directory paths in `run_train.sh`. Under the `--data_dir` argument, add the path to the directory extracted from `robot_kidnapper_dataset.zip`. Under the `--empty_data_dir` argument, add the path to the directory extracted from `robot_kidnapper_empty_dataset.zip`. 
 
+Then run `run_train.sh` by either copying the contents into the terminal or running the file directly.
 
-To run test experiment: 
-
-1. Request an interactive gpu with `salloc --gres=gpu:1 --cpus-per-task=7 -p overcap -J "inter" --exclude=bmo,hal,t1000 --qos debug`
-
-2. Download miniconda and create a conda environment using the `environment.yml` file
-
-3. Activate the conda environment and run the training script: `python train.py --proj_name unkidnappable_robot --exp_name test --log_spec --n_fft 512 --win_length 512 --hop_length 128 --num_epochs 75 --lr 1e-4 --batch_size 8 --weight_decay 1e-3 --acc_thresh 80 --background_sub --learn_backsub --backsub_w 0.8 --reg_w 1e-3 --reg_loss_fcn l1 --binary_depth --depth_threshold 1.7 --depth_posw 1.0 --depth_w 0.5 --cls_w 1.5 --subsample 2 --subsample_empty 1 --nostill --cls_posw 1.25 --empty_aug --empty_w 0.2 --empty_aug_prob 0.5 --spec_feat_nc 256 --mic_channels 0 1 2 3 --test_room cherry-320`
