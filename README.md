@@ -7,7 +7,7 @@
 
 ## The Robot Kidnapper Dataset
 
-We collect the Robot Kidnapper Dataset, consisting of 4-channel audio paired with 360 degree RGB video frames. You can download the dataset here: [link]()
+We collect the Robot Kidnapper Dataset, consisting of 4-channel audio paired with 360 degree RGB video frames. You can download the dataset here (both files required for training): [link1]() [link2](https://www.dropbox.com/scl/fi/p2g8ua6zu6rkqnp4bwxxl/robot_kidnapper_empty_dataset.tar?rlkey=mfvlk1iqyebtxruav1b5pyzmd&dl=0)
 
 Please download and extract both zip files. `robot_kidnapper_dataset.zip` contains a folder with the training and test examples and `robot_kidnapper_empty_dataset.zip` contains a folder with the empty room recordings used for data augmentation and background subtraction.
 
